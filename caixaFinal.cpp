@@ -33,11 +33,6 @@ nopilha *criar_pilha() {
     return NULL;
 }
 
-struct cliente {
-    string nome;
-    string cpf;
-};
-
 void menu() {
     cout << "--------------------MENU--------------------------" << endl;
     cout << "(1) Passar produtos" << endl;
@@ -100,17 +95,16 @@ void notaFiscal(descritor *d) {
     string nome, cpf;
     double total = 0;
     nolista *p = d->ini;
-    cliente x;
     
     cout << "--------------------------------------------------" << endl;
     cout << "Nome do cliente: ";
-    cin >> x.nome;
+    cin >> nome;
     cout << "CPF: ";
-    cin >> x.cpf;
+    cin >> cpf;
     
     if(d -> tam > 0) {
     cout << "\n------------------Nota fiscal--------------------" << endl;
-    cout << "Cliente: " << x.nome << ", CPF: " << x.cpf << endl;
+    cout << "Cliente: " << nome << ", CPF: " << cpf << endl;
     cout << "Produtos comprados: " << endl;
     
     while (p != NULL) {
